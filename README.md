@@ -2,7 +2,7 @@
 
 ## 2019-11-29
 
-#### [三角形的最大周长-976-简单](https://leetcode-cn.com/problems/largest-perimeter-triangle/)——[Code](.\code\976-简单-三角形的最大周长.py)
+#### [三角形的最大周长-976-简单](https://leetcode-cn.com/problems/largest-perimeter-triangle/)——[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/976-%E7%AE%80%E5%8D%95-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%91%A8%E9%95%BF.py)
 
 > "难的又不会，只能做做简单题混混每日打卡这样子"‘
 
