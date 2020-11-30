@@ -8,7 +8,7 @@
 
 Note：一开始用从前往后遍历，发现只击败了10%+；看评论才意识到从后遍历这种贪心做法更快，还是太naive了……
 
-### [767-重构字符串(M)](https://leetcode-cn.com/problems/reorganize-string/)：
+### [767-重构字符串(M)](https://leetcode-cn.com/problems/reorganize-string/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/767-%E4%B8%AD%E7%AD%89%E9%87%8D%E6%9E%84%E5%AD%97%E7%AC%A6%E4%B8%B2.py)
 
 > "为什么方法一图里有一个醒目的 sb？仿佛在人身攻击我(;´༎ຶД༎ຶ`)"
 
