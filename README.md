@@ -1,6 +1,6 @@
 # Leetcode-Problem-Set
 
-### [976-三角形的最大周长(S)](https://leetcode-cn.com/problems/largest-perimeter-triangle/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/976-%E7%AE%80%E5%8D%95-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%91%A8%E9%95%BF.py)
+### [976-三角形的最大周长(S)](https://leetcode-cn.com/problems/largest-perimeter-triangle/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0976-简单-三角形的最大周长.py)
 
 > "难的又不会，只能做做简单题混混每日打卡这样子"‘
 
@@ -8,7 +8,7 @@
 
 **Note**：一开始用从前往后遍历，发现只击败了10%+；看评论才意识到从后遍历这种贪心做法更快，还是太naive了……
 
-### [767-重构字符串(M)](https://leetcode-cn.com/problems/reorganize-string/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/767-%E4%B8%AD%E7%AD%89%E9%87%8D%E6%9E%84%E5%AD%97%E7%AC%A6%E4%B8%B2.py)
+### [767-重构字符串(M)](https://leetcode-cn.com/problems/reorganize-string/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0767-中等-重构字符串.py)
 
 > "为什么方法一图里有一个醒目的 sb？仿佛在人身攻击我(;´༎ຶД༎ຶ`)"
 
@@ -26,7 +26,7 @@
 
 **Note**：挖个坑，官方题解以及其他coder都说用“最大堆”很巧妙，明后天抽空学一下。
 
-### [34-在排序数组中查找元素的第一个和最后一个位置(M)](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/34-中等-在排序数组中查找元素的第一个和最后一个位置.py)
+### [34-在排序数组中查找元素的第一个和最后一个位置(M)](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0034-中等-在排序数组中查找元素的第一个和最后一个位置.py)
 
 >"今天终于可以重拳出击了。"
 
@@ -34,3 +34,23 @@
 
 * 首先，用二分法找到第一个target所在位置loc——如果连第一个都找不到的话，说明数组中就没有这个target，返回[-1,-1]即可；接着，对nums[:loc+1]和nums[loc:]两个数组分别再用二分，分别找最左侧和最右侧的target——一定能找到，因为再不济nums[loc]就是target；
 * 怎么找最左侧的target？二分，如果nums[mid]等于target，暂存mid并令end=mid-1，即最左侧的target（如果存在）肯定还在左边子数组里；如果nums[mid]小于target，则令start=mid+1；不可能是nums[mid]大于target，因为原数组本来就是升序的。直到找完整个数组即可。最右侧的target找法类似。
+
+### [321-拼接最大数(H)](https://leetcode-cn.com/problems/create-maximum-number/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0321-困难-拼接最大数.py)
+
+> "Computer Vision 计算机视觉，人工智能领域之一，简称CV，在该领域中的一切问题都可以通过：第一步：人工(按住键盘左下角那个键的同时，按住C)；第二步：智能，需要靠你大脑中亿万神经元的协同合作才能完成，你需要在屏幕中精确的选好位置，然后按下最下角那个键+V。这两步缺一不可！"
+
+大的逻辑是：
+
+* 将k分解为i+j，表示其中i个来自num1，j个来自num2——遍历所有available的(i,j)，获得最大的结果；
+* 对于一个(i,j)：
+  * ①从num1中拿到长度为i的最大数；从num2中拿到长度为j的最大数；
+  * ②合并成一个数
+
+其中，①步骤用DP做了大半天，但怎么调都超时（DP代码以注释形式保留）。看了题解，用单调栈通过。什么是单调栈：
+
+* 在“还有名额”时，维持栈内的元素自底向顶是单调的；
+* 本题中，在还可以删除元素时，向栈顶添加元素前，若栈顶的元素小，则弹出，直到：
+  * 栈空了，弹不了了；OR
+  * 删除的太多，已经没有删除名额了；OR
+  * 栈顶的元素大于或等于要添加元素。
+* 为什么栈顶元素小就要弹出：因为栈中一个元素，就对应着结果中的一位——栈顶小，那当然要用大的值来取代它了——一直弹，也就是把更大的数往高位去顶
