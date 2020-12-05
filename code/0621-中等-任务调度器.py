@@ -16,15 +16,15 @@ def leastInterval(tasks, n):
             max_nums.append(i)
     max_nums = len(max_nums)
     # Step 3
-    if (max_nums-1) < n:
-        counter = (max_count-1)*(n+1) + max_nums
-        diff    = len(tasks) - counter
-        if diff > 0:
-            return len(tasks)
-        else:
-            return counter
-    else:
+    if n < (max_nums - 1):
         return len(tasks)
+    else:
+        tmp = (max_count-1)*(n+1) + max_nums
+        if tmp > len(tasks):
+            return tmp
+        else:
+            return len(tasks)
+
 
 if __name__ == "__main__":
     tasks = ["A","A","A","B","B","B","C","D","E","F","G"]
