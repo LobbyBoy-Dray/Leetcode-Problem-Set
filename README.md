@@ -79,3 +79,8 @@
 * 最后，遍历一遍哈希表，如果有哪个不为空的二叉堆的最小值小于3，那就说明拆解失败。
 
 Note：二叉堆=完全二叉树+堆次序，本题用的最小堆，即root最小。
+
+### [621-任务调度器](https://leetcode-cn.com/problems/task-scheduler/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0621-中等-任务调度器.py)
+
+>"可以将难度评价员开除了吗？？这是中等？？？明显是难为我胖某人"
+
