@@ -80,6 +80,8 @@
 
 **Note**：二叉堆=完全二叉树+堆次序，本题用的最小堆，即root最小。
 
+<img src="./img/min-heap.png" width=60%>
+
 ### [621-任务调度器(M)](https://leetcode-cn.com/problems/task-scheduler/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0621-中等-任务调度器.py)
 
 >"可以将难度评价员开除了吗？？这是中等？？？明显是难为我胖某人"
@@ -101,3 +103,13 @@
   * 填完后，剩下的任务，也是从头开始插——此时任务序列长度就等于task长度——紧密的；
 
 这样规律就出来了。
+
+### [118-杨辉三角(S)](https://leetcode-cn.com/problems/pascals-triangle/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0118-简单-杨辉三角.py)
+
+> "困难题我唯唯诺诺，简单题我重拳出击"
+
+递归。
+
+**Note**：(a+b)^n的二项式展开中的各项系数依次对应杨辉三角的第n行中的每一项（行号从第0行开始）。
+
+<img src="./img/yh_triangle.jpg" width=40%>
