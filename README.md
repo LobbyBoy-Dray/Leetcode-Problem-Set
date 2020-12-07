@@ -114,7 +114,7 @@
 
 <img src="./img/yh_triangle.jpg" width=40%>
 
-### [861-翻转矩阵后的得分](https://leetcode-cn.com/problems/score-after-flipping-matrix/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0861-中等-翻转矩阵后的得分.py)
+### [861-翻转矩阵后的得分(M)](https://leetcode-cn.com/problems/score-after-flipping-matrix/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0861-中等-翻转矩阵后的得分.py)
 
 > "这个月是贪心月，对于我这种大公无私的人来说，着实有些困难"
 
@@ -126,4 +126,4 @@
 
 其次，再看除第0列的其他列——每列一定要翻转成1占一半或以上，否则肯定不是最大。
 
-* 例如某一列是1-0-0-0-1，贡献为2×2^n；要翻成0-1-1-1-0，这样贡献为3×2^n，更多。
+* 例如某一列是1-0-0-0-1，贡献为$2×2^n$；要翻成0-1-1-1-0，这样贡献为$3×2^n$，更多。
