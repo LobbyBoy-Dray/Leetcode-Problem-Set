@@ -1,6 +1,6 @@
 # Leetcode-Problem-Set
 
-### [976-三角形的最大周长(S)](https://leetcode-cn.com/problems/largest-perimeter-triangle/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0976-简单-三角形的最大周长.py)
+### [976. 三角形的最大周长(S)](https://leetcode-cn.com/problems/largest-perimeter-triangle/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0976-简单-三角形的最大周长.py)
 
 > "难的又不会，只能做做简单题混混每日打卡这样子"‘
 
@@ -8,7 +8,7 @@
 
 **Note**：一开始用从前往后遍历，发现只击败了10%+；看评论才意识到从后遍历这种贪心做法更快，还是太naive了……
 
-### [767-重构字符串(M)](https://leetcode-cn.com/problems/reorganize-string/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0767-中等-重构字符串.py)
+### [767. 重构字符串(M)](https://leetcode-cn.com/problems/reorganize-string/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0767-中等-重构字符串.py)
 
 > "为什么方法一图里有一个醒目的 sb？仿佛在人身攻击我(;´༎ຶД༎ຶ`)"
 
@@ -26,7 +26,7 @@
 
 **Note**：挖个坑，官方题解以及其他coder都说用“最大堆”很巧妙，明后天抽空学一下。
 
-### [34-在排序数组中查找元素的第一个和最后一个位置(M)](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0034-中等-在排序数组中查找元素的第一个和最后一个位置.py)
+### [34. 在排序数组中查找元素的第一个和最后一个位置(M)](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0034-中等-在排序数组中查找元素的第一个和最后一个位置.py)
 
 >"今天终于可以重拳出击了。"
 
@@ -35,7 +35,7 @@
 * 首先，用二分法找到第一个target所在位置loc——如果连第一个都找不到的话，说明数组中就没有这个target，返回[-1,-1]即可；接着，对nums[:loc+1]和nums[loc:]两个数组分别再用二分，分别找最左侧和最右侧的target——一定能找到，因为再不济nums[loc]就是target；
 * 怎么找最左侧的target？二分，如果nums[mid]等于target，暂存mid并令end=mid-1，即最左侧的target（如果存在）肯定还在左边子数组里；如果nums[mid]小于target，则令start=mid+1；不可能是nums[mid]大于target，因为原数组本来就是升序的。直到找完整个数组即可。最右侧的target找法类似。
 
-### [321-拼接最大数(H)](https://leetcode-cn.com/problems/create-maximum-number/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0321-困难-拼接最大数.py)
+### [321. 拼接最大数(H)](https://leetcode-cn.com/problems/create-maximum-number/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0321-困难-拼接最大数.py)
 
 > "Computer Vision 计算机视觉，人工智能领域之一，简称CV，在该领域中的一切问题都可以通过：第一步：人工(按住键盘左下角那个键的同时，按住C)；第二步：智能，需要靠你大脑中亿万神经元的协同合作才能完成，你需要在屏幕中精确的选好位置，然后按下最下角那个键+V。这两步缺一不可！"
 
@@ -55,7 +55,7 @@
   * 栈顶的元素大于或等于要添加元素。
 * 为什么栈顶元素小就要弹出：因为栈中一个元素，就对应着结果中的一位——栈顶小，那当然要用大的值来取代它了——一直弹，也就是把更大的数往高位去顶
 
-### [204-计数质数(S)](https://leetcode-cn.com/problems/count-primes/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0204-简单-计数质数.py)
+### [204. 计数质数(S)](https://leetcode-cn.com/problems/count-primes/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0204-简单-计数质数.py)
 
 > "写排名第一的那个答案的真他娘的是个人才，把特么20个测试用例全部写进去了。牛逼。"
 
@@ -66,7 +66,7 @@
 * 筛掉3的倍数(自己不筛): 2 3 5 7 11 13——这里不用从2×3开始找，直接从3×3=9开始即可，因为2×3的那个数会被2的时候筛掉——筛p的倍数(自己不筛)，从p×p开始即可，p×(p+1)、p×(p+2)……
 * 筛掉4的倍数(自己不筛)：2 3 5 7 11 13——不用，因为第一个要筛的为4*4=16，已经大于15了，算法停止。
 
-### [659-分割数组为连续子序列(M)](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0659-中等-分割数组为连续子序列.py)
+### [659. 分割数组为连续子序列(M)](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0659-中等-分割数组为连续子序列.py)
 
 > "你们都在答题，只有我想斗地主"
 
@@ -82,7 +82,7 @@
 
 <img src="./img/min-heap.png" width=60%>
 
-### [621-任务调度器(M)](https://leetcode-cn.com/problems/task-scheduler/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0621-中等-任务调度器.py)
+### [621. 任务调度器(M)](https://leetcode-cn.com/problems/task-scheduler/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0621-中等-任务调度器.py)
 
 >"可以将难度评价员开除了吗？？这是中等？？？明显是难为我胖某人"
 
@@ -104,7 +104,7 @@
 
 这样规律就出来了。
 
-### [118-杨辉三角(S)](https://leetcode-cn.com/problems/pascals-triangle/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0118-简单-杨辉三角.py)
+### [118. 杨辉三角(S)](https://leetcode-cn.com/problems/pascals-triangle/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0118-简单-杨辉三角.py)
 
 > "困难题我唯唯诺诺，简单题我重拳出击"
 
@@ -114,7 +114,7 @@
 
 <img src="./img/yh_triangle.jpg" width=40%>
 
-### [861-翻转矩阵后的得分(M)](https://leetcode-cn.com/problems/score-after-flipping-matrix/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0861-中等-翻转矩阵后的得分.py)
+### [861. 翻转矩阵后的得分(M)](https://leetcode-cn.com/problems/score-after-flipping-matrix/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0861-中等-翻转矩阵后的得分.py)
 
 > "这个月是贪心月，对于我这种大公无私的人来说，着实有些困难"
 
@@ -128,7 +128,7 @@
 
 * 例如某一列是1-0-0-0-1，贡献为2×2^n；要翻成0-1-1-1-0，这样贡献为3×2^n，更多。
 
-### [842-将数组拆分成斐波那契序列(M)](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0842-中等-将数组拆分成斐波那契序列.py)
+### [842. 将数组拆分成斐波那契序列(M)](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0842-中等-将数组拆分成斐波那契序列.py)
 
 > "我啪一下就的点进来了，很快啊，我就退出了"
 
@@ -140,3 +140,11 @@
 * 第二，数项要小于等于2^31 - 1！这一点很重要，因为有个测试例子是"539834657215398346785398346991079669377161950407626991734534318677529701785098211336528511"——虽然可以拆成斐波那契序列，但其中有的数项溢出了。
 
 **Flag：学习一下标准的回溯算法。**
+
+### [62. 不同路径(M)](https://leetcode-cn.com/problems/unique-paths/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0062-中等-不同路径.py)
+
+> "数学大法好"
+
+一道非常典型的DP问题，列出状态转移方程就结束了。
+
+*但复杂度更低的方法是直接用组合数学：“从左上角到右下角的过程中，我们需要移动m+n-2次，其中有m−1次向下移动，n-1次向右移动。因此路径的总数，就等于从m+n−2次移动中选择m−1次向下移动的方案数，即组合数……*——From [官方题解](https://leetcode-cn.com/problems/unique-paths/solution/bu-tong-lu-jing-by-leetcode-solution-hzjf/)
