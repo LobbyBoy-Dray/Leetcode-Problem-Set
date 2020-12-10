@@ -148,3 +148,9 @@
 一道非常典型的DP问题，列出状态转移方程就结束了。
 
 *但复杂度更低的方法是直接用组合数学：“从左上角到右下角的过程中，我们需要移动m+n-2次，其中有m−1次向下移动，n-1次向右移动。因此路径的总数，就等于从m+n−2次移动中选择m−1次向下移动的方案数，即组合数……*——From [官方题解](https://leetcode-cn.com/problems/unique-paths/solution/bu-tong-lu-jing-by-leetcode-solution-hzjf/)
+
+### [860. 柠檬水找零(S)](https://leetcode-cn.com/problems/lemonade-change/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0860-简单-柠檬水找零.py)
+
+> "还搁这儿现金呢，现在都微信支付宝了"
+
+遍历账单数组模拟即可。只需注意一点：当收到20元时，优先用10块找零（10+5）；如果10块无法完成的话，再check用三张5块找零。
