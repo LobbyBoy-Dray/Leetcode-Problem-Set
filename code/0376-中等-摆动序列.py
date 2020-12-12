@@ -6,18 +6,14 @@ def wiggleMaxLength(nums):
     difference_list = []
     for i in range(1, len(nums)):
         difference_list.append(nums[i]-nums[i-1])
-    
-    tmp_list = []
-    tmp      = 0
-    for j in range(len(difference_list)):
-        if tmp * difference_list[j] >= 0:
-            tmp += difference_list[j]
-        else:
-            tmp_list.append(tmp)
-            tmp = difference_list[j]
-    tmp_list.append(tmp)
-
-    if tmp_list == [0]:
-        return 1
-    else:
-        return len(tmp_list)+1
+    #############################################################################
+    counter   = 0
+    prev_sign = 0
+    for i in difference_list:        
+        if i == 0:
+            continue
+        curr_sign = 1 if i > 0 else -1
+        if prev_sign != curr_sign:
+            counter   += 1
+            prev_sign = curr_sign
+    return counter+1
