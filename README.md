@@ -171,3 +171,8 @@
 2. D\_RR\_（2R禁掉了4D，2R变7R）
 3. \_\_RR\_（3R禁掉了5D，3R变8R）
 4. 全剩R，R方获胜
+
+### [376. 摆动序列(M)](https://leetcode-cn.com/problems/wiggle-subsequence/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0376-中等-摆动序列.py)
+
+> "很快呀, 啪的一下, 我来了, 然后我又走了"
+
