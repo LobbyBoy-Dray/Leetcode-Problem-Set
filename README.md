@@ -188,5 +188,19 @@
 
 创建一个空字典，主要是利用字典查找key的时间复杂度为O(1)这个特点。遍历数组（临时变量为i），如果i在字典的key中，则说明有重复元素，此时可立刻返回True；如果i不在字典的key中，那么添加进去——这里value是什么随意，并不重要。
 
+### [49. 字母异位词分组(M)](https://leetcode-cn.com/problems/group-anagrams/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0049-中等-字母异位词分组.py)
 
+> "太蠢了自己，双重for，一顿操作猛如虎，一看战绩百分五"
 
+用【排序后的字符串】作为字典的键即可！
+
+### [738. 单调递增的数字(M)](https://leetcode-cn.com/problems/monotone-increasing-digits/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0049-中等-字母异位词分组.py)
+
+> "写题解的人是不打算让人看懂么"
+
+（拿笔画一画就画出了下面的思路）
+
+遍历，找到第一个与最高位（记作X）不一样的数字（Y，索引记作idx）——找不到的话说明该数所有数字一样，返回即可：
+
+* 若X>Y：最高位减掉1，其他位莽9即可；
+* 若X<Y：规模更小子问题——list[idx:]
