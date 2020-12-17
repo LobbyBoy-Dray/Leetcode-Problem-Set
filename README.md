@@ -204,3 +204,55 @@
 
 * 若X>Y：最高位减掉1，其他位莽9即可；
 * 若X<Y：规模更小子问题——list[idx:]
+
+### [121. 买卖股票的最佳时机(S)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0121-简单-买卖股票的最佳时机.py)
+
+**动态规划**
+
+* dp[i]表示“index=i那天卖出股票能赚得的最大收益”——Review：动态规划的两种常见状态构造
+  * 迄index=i为止……
+  * 以index=i结尾……
+* 状态转移函数dp[i]：
+  * 首先注意到：dp[i-1] = -min[i-1]+price[i-1]，其中min[i-1]表示至index=i-1这一天股价的最低值
+  * → min[i-1]=price[i-1]-dp[i-1]
+  * → min[i] = min(min[i-1], price[i])
+  * → dp[i] = -min[i]+price[i]
+
+**改进**
+
+* 引入两个变量：min_price，记录迄今为止最低股价；max_profit，记录迄今为止最高利润；
+* 遍历prices数组，对于每一天：
+  * 先更新min_price：今天是不是历史最低价，是的话更新；
+  * 然后更新max_profit：如果今天卖出股票，利润会不会更大（今天卖出的话，买入点就是历史最低价）。
+
+### [122. 买卖股票的最佳时机 II(S)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)：[Code](https://github.com/LobbyBoy-Dray/0122-简单-买卖股票的最佳时机2.py)
+
+**动态规划**
+
+* 每一天最后有两种状态：有股票，没股票
+
+* dp\[i\]\[0\]表示index=i这一天最后没股票的状态下，最大利润；dp\[i\]\[1\]表示index=i这一天最后有股票的状态下，最大利润；
+* dp\[i\]\[0\] = max(dp\[i-1\]\[0\]，dp\[i-1\][1]+prices[i])，今天没有股票，可能是：
+  * 昨天也没有股票
+  * 昨天有股票但今天卖掉了
+* dp\[i\]\[1\] = max(dp\[i-1\]\[1\]，dp\[i-1\][0]-prices[i])，今天有股票，可能是：
+  * 昨天有股票
+  * 昨天没有股票但今天买入了
+
+**贪心**
+
+* 策略：谷入，峰出；
+  * 谷：两边高，中间低；对于起点，右高；
+  * 峰：两边低，中间高；对于重点，左低。
+
+* 为何贪心策略可以得到最优？局部分析+反证法：入肯定是谷入，如果不是峰出，其他三段出的利润都不会有峰出高。
+
+
+
+<img src="./img/0122.jpg" width=40%>
+
+### [714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)：[Code](https://github.com/LobbyBoy-Dray/0714-中等-买卖股票的最佳时机含手续费.py)
+
+**动态规划**
+
+* 与上一题极其类似，只需将卖出股票时多收一个手续费即可，即dp\[i\]\[0\]的转移方程变为：dp\[i\]\[0\] = max(dp\[i-1\]\[0\]，dp\[i-1\][1]+prices[i]-fee)
