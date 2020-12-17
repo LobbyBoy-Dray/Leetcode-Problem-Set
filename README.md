@@ -251,8 +251,12 @@
 
 <img src="./img/0122.jpg" width=40%>
 
-### [714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)：[Code](https://github.com/LobbyBoy-Dray/0714-中等-买卖股票的最佳时机含手续费.py)
+### [714. 买卖股票的最佳时机含手续费(M)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)：[Code](https://github.com/LobbyBoy-Dray/0714-中等-买卖股票的最佳时机含手续费.py)
 
 **动态规划**
 
 * 与上一题极其类似，只需将卖出股票时多收一个手续费即可，即dp\[i\]\[0\]的转移方程变为：dp\[i\]\[0\] = max(dp\[i-1\]\[0\]，dp\[i-1\][1]+prices[i]-fee)
+
+**贪心**
+
+* 暂略（自己想不出来，解答又没看懂，摊手……）
