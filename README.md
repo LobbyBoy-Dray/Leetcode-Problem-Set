@@ -225,7 +225,7 @@
   * 先更新min_price：今天是不是历史最低价，是的话更新；
   * 然后更新max_profit：如果今天卖出股票，利润会不会更大（今天卖出的话，买入点就是历史最低价）。
 
-### [122. 买卖股票的最佳时机 II(S)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)：[Code](https://github.com/LobbyBoy-Dray/0122-简单-买卖股票的最佳时机2.py)
+### [122. 买卖股票的最佳时机 II(S)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0122-简单-买卖股票的最佳时机2.py)
 
 **动态规划**
 
@@ -251,7 +251,7 @@
 
 <img src="./img/0122.jpg" width=40%>
 
-### [714. 买卖股票的最佳时机含手续费(M)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)：[Code](https://github.com/LobbyBoy-Dray/0714-中等-买卖股票的最佳时机含手续费.py)
+### [714. 买卖股票的最佳时机含手续费(M)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0714-中等-买卖股票的最佳时机含手续费.py)
 
 **动态规划**
 
