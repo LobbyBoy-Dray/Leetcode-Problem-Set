@@ -260,3 +260,20 @@
 **贪心**
 
 * 暂略（自己想不出来，解答又没看懂，摊手……）
+
+### [389. 找不同(S)](https://leetcode-cn.com/problems/find-the-difference/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0389-简单-找不同.py)
+
+> "为什么大佬们总是能想到位操作,难道这就是差距吗"
+>
+> ——"因为我们在做专项练习题"
+
+头铁，一上来就想到哈希表，还是太naive了。贴一下官方题解中的**位运算法**：
+
+* 位运算符中的——异或，XOR，性质：
+  * a XOR 0 = a
+  * a XOR a = 0
+  * 满足【交换律】和【结合律】
+* 本题先将两个字符串拼在一起，然后找出现**奇数次**的字符！
+  * 用ord函数将字符转换为整数
+  * a XOR b …… = 0 XOR 目标字符 = 目标字符
+  * 结束
