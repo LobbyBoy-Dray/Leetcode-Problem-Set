@@ -314,3 +314,26 @@ Step2：转置——双层循环。
 
 
 
+
+
+### [330. 按要求补齐数组(H)](https://leetcode-cn.com/problems/patching-array/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0330-困难-按要求补齐数组.py)
+
+> "大家好啊，我是混元刷题太极门掌门人马力扣。刚刚有个朋友问我，马老师发生甚么事了，我一看，嗷，原来是6天出了4个hard，很快啊！上来就是一组股票，一个数学，蹭了我眼睛一下，两分多钟以后，我笑笑，决定cv，这时候，按照传统刷题的点到为止，我已经打卡了。希望力扣耗子尾汁，不要再犯这样的聪明，小聪明啊！"
+
+维护一个变量max_cover，表示从1到max_cover都“已经覆盖”；同时遍历数组，遍历到数num：
+
+* 若num<=max_cover+1，则更新max_cover至max_cover+ num——不用添加数字：
+  * 例如，现在max_cover是6，num为7→则最大可覆盖到13
+  * 例如，现在max_cover是6，num为5→则最大可覆盖到11
+* 否则，一直做如下的事情（情形：例如，现在max_cover是6，num为8）
+  * 添加max_cover+1进数组，并更新max_cover至2×max_cover+1
+  * 例如：max_cover是6，num为20：
+    * 添加6+1=7，则max_cover变为13——还没有将num覆盖住；
+    * 添加13+1=14，则max_cover变为27——此时已将num覆盖住。
+
+**注意：**
+
+1. 需要在数组nums最后加上n+1，防止这样的用例：
+   * nums=[]，n=8
+   * 表示一定要cover掉n——不加n而加n+1是因为n可能不在nums中，直接加n的话会使得数组“原来就有n”，这样可能最后会少算一个数；
+2. 每次更新max_cover后都要和n比一下：一旦max_cover大于等于n了，就可以返回counter了。
