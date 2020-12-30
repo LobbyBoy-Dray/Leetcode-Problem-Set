@@ -337,3 +337,14 @@ Step2：转置——双层循环。
    * nums=[]，n=8
    * 表示一定要cover掉n——不加n而加n+1是因为n可能不在nums中，直接加n的话会使得数组“原来就有n”，这样可能最后会少算一个数；
 2. 每次更新max_cover后都要和n比一下：一旦max_cover大于等于n了，就可以返回counter了。
+
+### [1046. 最后一块石头的重量(S)](https://leetcode-cn.com/problems/last-stone-weight/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/1046-简单-最后一块石头的重量.py)
+
+> "看到easy有点懵，说好的闪电5连hard呢"
+
+python的标准库之一：heapq，(最小)堆的数据结构与相关操作。
+
+* `heapq.heapify(x)`：将列表x原地转换成堆
+* `heapq.heappush(heap, item)`：将元素item加入堆heap中，保持堆的特性
+* `heapq.heappop(heap)`：弹出并返回堆heap中的最小元素，保持堆的特性
+* `heapq[0]`：访问堆的最小元素
