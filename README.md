@@ -261,6 +261,25 @@
 
 * 暂略（自己想不出来，解答又没看懂，摊手……）
 
+### [188. 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0188-困难-买卖股票的最佳时机IV.py)
+
+> "股票竟然可以0元？那我干嘛只买入一股，我买一万股！"
+
+**动态规划-三维数组**
+
+* dp\[i\]\[j\]\[0\]表示第i天、完成第j次交易、手中没有股票；dp\[i\]\[j\]\[1\]表示第i天、完成第j次交易、手中有股票——一次交易完成是指一次买入加一次卖出；
+* 状态转移方程：
+  * dp\[i\]\[j\]\[0\] = max(dp\[i-1\]\[j-1\]\[1\]+prices\[i\], dp\[i-1\]\[j\]\[0\])——第i-1天，完成了j-1次交易，手中有股票，第i天卖了/第i-1天，完成了j次交易，手中没有股票；
+  * dp\[i\]\[j\]\[1\] = max(dp\[i-1\]\[j\]\[0\]-prices\[i\], dp\[i-1\]\[j\]\[1\])——第i-1天，完成了j次交易，手中没有股票，第i天买了/第i-1天，完成了j次交易，手中有股票；
+* 注意，初始化dp数组用**负无穷大**，这是因为要排除掉那些【不可能情形】——不可能情形就像病毒，初始的不可能情形会带出后面的不可能情形，而不可能情形都是负无穷，所以不会被max选到：
+  * 2,1,1要用1,1,0和1,1,1，而后者是不可能出现的情形；1,1,1要用0,1,0和0,1,1，而这两个都是负无穷。
+
+
+
+
+
+
+
 ### [389. 找不同(S)](https://leetcode-cn.com/problems/find-the-difference/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0389-简单-找不同.py)
 
 > "为什么大佬们总是能想到位操作,难道这就是差距吗"
@@ -348,3 +367,27 @@ python的标准库之一：heapq，(最小)堆的数据结构与相关操作。
 * `heapq.heappush(heap, item)`：将元素item加入堆heap中，保持堆的特性
 * `heapq.heappop(heap)`：弹出并返回堆heap中的最小元素，保持堆的特性
 * `heapq[0]`：访问堆的最小元素
+
+### [455. 分发饼干(S)](https://leetcode-cn.com/problems/assign-cookies/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0455-简单-分发饼干.py)
+
+> "一块饼干能吃饱？"
+
+贪心：最小尺寸的饼干去满足最大的可以满足的胃口。
+
+先对【饼干组】和【胃口组】从小到大排序，然后双指针遍历：
+
+* 若当前饼干能够满足当前胃口，那就去满足，然后两个指针各进一位；
+* 若当前饼干不能满足当前胃口，那说明该饼干没用了，饼干组指针进一位。
+
+### [435. 无重叠区间(M)](https://leetcode-cn.com/problems/non-overlapping-intervals/)：[Code](https://github.com/LobbyBoy-Dray/Leetcode-Problem-Set/blob/master/code/0435-中等-无重叠区间.py)
+
+> "hxdm，明年再见"
+
+和【扎气球】那道题很像。
+
+* 首先把所有区间依照右边界点从小到大排序；
+* 将第一个区间X拿出来，然后遍历区间集合：
+  * 如果某区间的左边界小于X的右边界，说明它们必定重合，那么肯定要删一个；
+  * 删哪个？肯定保留右边界靠左的——**贪心**；
+  * 直到碰到某区间左边界等于或大于X的右边界；
+* 此时用该区间代替X，继续上述操作。
